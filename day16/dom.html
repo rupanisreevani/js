@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>hii</p>
+    <div>
+        <p>good</p>
+        <button>click here</button>
+        <h1 id="one">hlii,good aftnoon</h1>
+        <h3>johny johny</h3>
+        <h3>yes papa</h3>
+        <h3>studying means</h3>
+        <h3>no papa</h3>
+        <button onclick="changecolor()" >click here</button>
+        <p>sreevani</p>
+        <h2>hii to sai</h2>
+        <p> tharun</p>
+        <h4>with nani</h4>
+        <button onclick="chagre()">chanage here</button>
+        <p class="slow"> dingi went </p>
+        <h4 class="slow"> to depression </h4>
+
+    </div>
+    <script>
+        document.write("sai")
+        var greeting=document.getElementById('one')
+        greeting.style.color="pink"
+        greeting.style.backgroundColor="blue"
+        greeting.textContent="by,good "
+        greeting.innerHTML="<u><i>by.good</i></u>"
+        var sum=document.getElementsByTagName('h3')
+        function changecolor(){
+        //     sum[0].style.color="pink"
+        //     sum[1].style.color="red"
+        
+        for(i=0; i<=sum.length;i++){
+            sum[i].style.color="pink"
+        }
+        }
+        var faster=document.getElementsByName('fast')
+        function chage(){
+            faster.style.fontsize="40px;"
+        }
+        document.getElementsByClassName('slow')[0].style.color="red"
+        document.getElementsByClassName('slow')[1].style.color="bule"
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>
