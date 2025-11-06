@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>iam sreevani</p>
+        <button>chick here</button>
+        <h1 id="one">good after noon</h1>
+        <h2>this js</h2>
+        <h2>python </h2>
+        <h2>HTML</h2>
+        <h2>CSS</h2>
+        <!-- <button onclick="changecolor()">click here</button> -->
+        <button onclick="changecolor()" >click here</button>
+        <p name="fast"> sreevani</p>
+        <h2 name="fast"> hii</h2>
+        <p name="fast">hello</p>
+        <button onclick="chage()">click here</button>
+        <p class="slow">dingi went</p>
+        <h4 class="slow">to depression</h4>
+
+
+
+    </div>
+    <script>
+        document.write("document object model")
+        var greeting=document.getElementById('one')
+        greeting.style.color="pink"
+        greeting.textContent="bye ,good after noon"
+        greeting.innerHTML= "<u><i> bye ,good after noon </i></u>"
+        var sum = document.getElementsByTagName('h2');
+        function changecolor() {
+            // sum[0].style.color = "pink";
+            // sum[1].style.color = "red";
+            for (i=0; i<sum.length;i++){
+                sum[i].style.color="red"
+            }
+        }
+
+        var faster=document.getElementsByName('fast')
+        function chage(){
+            faster.style.fontsize="40px"
+
+        }
+        document.getElementsByClassName('slow')[0].style.color="blue"
+        document.getElementsByClassName('slow')[0].style.backgrundcolor="red"
+        
+        
+
+    
+    </script>
+    
+</body>
+</html>
