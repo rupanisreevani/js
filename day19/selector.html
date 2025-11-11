@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="para">one is one</p>
+    <button onclick="fun_name()">clik here</button>
+    <p class="para">tow is tow</p>
+    <p class="para">three is three</p>
+
+
+    <h3>sareevani</h3>
+    <h3>sai</h3>
+    <button onclick="fun()">click</button>
+    <script>
+        function fun_name(){
+            var ele1=document.querySelector(".para")
+            ele1.style.color="blue"
+        }
+        function fun() {
+    var ele2 = document.querySelectorAll("h3");
+    ele2.forEach((element) => {
+        element.style.color = "pink";
+    });
+}
+
+    </script>
+</body>
+</html>

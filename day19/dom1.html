@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+        <h1 class="para">js</h1>
+        <button onclick="fun1()">click here</button>
+        <p class="fun">sreevani</p>
+        <p class="fun">nani</p>
+        <button onclick="fun2()">click here</button>
+        <p id="title">this is the js</p>
+        <button onclick="ele()">click here</button>
+
+        <p class="sun">js</p>
+        <P class="sun">python</P>
+        <p class="sun">sql</p>
+        <button onclick="ele3()">chick</button>
+
+    
+    <script>
+        function fun1(){
+            var ele1=document.querySelector(".para").textContent="Welcome to JavaScript DOM!";
+        }
+        function fun2(){
+        // var ele2 = document.querySelectorAll(".fun");
+        // for(let i = 0; i < ele2.length; i++){
+        // ele2[i].style.color = "blue";
+        var ele2 = document.querySelectorAll(".fun");
+        ele2.forEach(element => {
+        element.style.color = "blue";
+        });
+    }
+     var ele=document.getElementById("title")
+     ele.style.fontSize="30px"
+    function ele3(){
+     var ele3=document.qu(".sun")
+     ele3.forEach(element =>{
+        element.style.color="green";
+     })
+
+    }
+
+    </script>  
+
+
+
+
+    
+</body>
+</html>
