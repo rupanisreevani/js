@@ -21,6 +21,21 @@
         <p class="sun">sql</p>
         <button onclick="ele3()">chick</button>
 
+        <p>hello world</p>
+        <p>welcome to js</p>
+        <p>querySelectorAll</p>
+        <button onclick="changecolor()">change color</button>
+
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <button onclick="addborder()">add border</button>
+
+        <div id="myDiv">This is a div element</div>
+        <button onclick="addClass()">Add Class</button>
+
+
+
     
     <script>
         function fun1(){
@@ -44,6 +59,29 @@
      })
 
     }
+
+    function changecolor(){
+        var par=document.querySelectorAll("p");
+        par.forEach(function(p){
+            p.style.color="green"
+        })
+    }
+
+    function addborder(){
+        var boxes=document.querySelectorAll(".box");
+        boxes.forEach(function(box){
+            box.style.border="2px solid black";
+
+
+        });
+    }
+
+    function addClass() {
+  var div = document.querySelector("div");
+  div.setAttribute("class", "highlight");
+}
+
+
 
     </script>  
 
