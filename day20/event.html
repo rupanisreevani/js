@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="one">today is wednesday</h2>
+    <button onclick="party()">click here</button><br><br>
+    <button onmouseover="fun_name()">onmouseover</button><br><br>
+    <button onmouseout="name1()">onmouseout</button><br><br>
+    <form >
+        <input type="text" onfocus="stylin()"
+    </form>
+
+<script> 
+    function party() {
+        var plan = document.querySelector("#one");
+        plan.innerHTML = "let's go for a party!";
+    }
+    function fun_name(){
+        alert("you moved the mouse cursor on the button")
+    }
+    function name1(){
+        alert("you moved mousecurout button")
+    }
+    function stylin(){
+        var inp=document.querySelector("input")
+        inp.style.backgroundColor="pink"
+    }
+</script>
+</body>
+</html>
