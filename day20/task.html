@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,6 +44,66 @@
             var chac2 = document.querySelector(".box1");
             chac2.style.backgroundColor = "gray";
         }
+
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+
+    <div id="sis">Akka</div>
+
+    <input type="text" id="nameinput">
+
+    <img src="puppy2.webp" id="img">
+
+    <a id="mylink" href="https://www.10000coders.in/">Go to 10kcoders</a>
+    
+
+    <button id="button" disabled>click here</button>
+
+
+    <img id="myimg" src="father-and-daughter.jpg" width="350px" border=100 >
+
+    <script>
+        var a=document.getElementById("sis")
+        a.setAttribute("class","life")
+        a.style.backgroundColor="orange"
+        a.style.fontSize="30px"
+        a.style.fontFamily="courier New"
+
+        var a=document.getElementById("nameinput")
+        a.setAttribute("placeholder","Enter your name:")
+
+
+        var ima=document.getElementById("img")
+        var image=ima.getAttribute("src")
+        console.log(image)
+
+        var link=document.getElementById("mylink")
+        var url=link.getAttribute("href")
+        console.log(url)
+        
+
+        var btn=document.getElementById("button")
+        btn.removeAttribute("disabled")
+
+        var border=document.getElementById("myimg")
+        border.removeAttribute("border")
+        var img=document.getElementById("myimg")
+        img.style.borderLeftColor="blue"
+        img.style.borderRightColor="red"
+        
+
+
+
 
     </script>
 </body>
