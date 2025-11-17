@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <div id="special">
+    <div id="special">
         <h2> this is js</h2>
         <p>this is python</p>
 
@@ -21,7 +21,7 @@
     <script>
         // console.log(document.body)
         console.log(document.links)
-    </script> -->
+    </script>
     <div id="first">
         <p >this is first paragraph</p>
         <p>this is js</p>
@@ -33,25 +33,25 @@
 
     </div>
     <script>
-        // var last=document.getElementById("last")
-        // last.remove()
+        var last=document.getElementById("last")
+        last.remove()
         var n = document.createElement('p');
         n.innerText = "This is SQL is special heading in division2";
         console.log(n);
 
-        // var parent = document.getElementById("second");
-        // var last = document.getElementById("last");
-        // var parent = document.getElementById("second");
-        // var last = document.getElementById("pfirst");
-        // console.log(last)
-        // parent.removeChild(last);
+        var parent = document.getElementById("second");
+        var last = document.getElementById("last");
+        var parent = document.getElementById("second");
+        var last = document.getElementById("pfirst");
+        console.log(last)
+        parent.removeChild(last);
 
-        // parent.insertBefore(n, last);
+        parent.insertBefore(n, last);
 
 
-        // console.log(parent);
+        console.log(parent);
 
-        // parent.appendChild(n);
+        parent.appendChild(n);
         var last = document.getElementById("last");
         last.replaceChildren(n)
 

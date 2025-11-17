@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body onload="loading()">
     <h2 id="one">today is wednesday</h2>
     <button onclick="party()">click here</button><br><br>
     <button onmouseover="fun_name()">onmouseover</button><br><br>
     <button onmouseout="name1()">onmouseout</button><br><br>
     <form >
-        <input type="text" onfocus="stylin()"
-    </form>
+        <input type="text" onfocus=stylin()>
+    </form><br><br>
+    <form onsubmit="sub()">
+        <input type="text">
+        <button>submit</button>
+
+    </form><br><br>
+
+    <input type="text" id="tent">
+    <select  id="sel">
+        <option>hyd</option>
+        <option >mdb</option>
+        <option >canada</option>
+    </select>
+
+
 
 <script> 
     function party() {
@@ -29,6 +43,26 @@
         var inp=document.querySelector("input")
         inp.style.backgroundColor="pink"
     }
+    function sub() {
+        alert("form submitted successfully")
+        
+    }
+    function loading() {
+    alert("Page loaded successfully!");
+    }
+    var name2 = document.getElementById("tent");
+    name2.onchange = function() {
+    console.log("The added value changed: " + name2.value);
+    }
+
+    var sele=document.querySelector("sel")
+    sele.onchange=function(){
+        console.log("the selectd city:" +sele.value)
+    }
+
+
+
+
 </script>
 </body>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="special">
+        Name: <input id="fullname" type="text"/> <br><br>
+
+        <!-- <button id="b1" onclick="document.body.style.backgroundColor='pink'">change background</button> -->
+        <!-- <button id="b1" onclick="change()">chage background</button> -->
+        <!-- <button id="b1" onclick="change1()">chage background</button> -->
+        <button id="b1">Change Background</button>
+    
+    <script>
+    //     function change(){
+
+        
+    //     document.body.style.backgroundColor="yellow"
+    //     }
+        // function change1(){
+        //     let btn=document.getElementById("#b1")
+        //     btn.onclick=change1();
+        //     document.body.style.backgroundColor="red"
+        // }
+        // let btn = document.getElementById("b1");
+        // btn.onclick = function() {
+        // document.body.style.backgroundColor = "grey";
+    // };
+        //    let btn=document.getElementById("b1")
+        //    btn.addEventListener('click',change1)
+        //    function change1(){
+        //     document.body.style.backgroundColor="pink"
+        //    }
+            //   let fn=document.getElementById("fullname")
+            //   fn.addEventListener('focus',change)
+            //   function change(){
+                
+            //     fn.style.backgroundColor="pink"
+            //   }
+            // let fn=document.getElementById("fullname")
+            //   fn.addEventListener('focus',change)
+            //   function change(evnt){
+            //     console.log(evnt)
+                
+            //     fn.style.backgroundColor="pink"
+            //   }
+              let fn=document.getElementById("fullname")
+              fn.addEventListener('keyup',change)
+              function change(evnt){
+                console.log(evnt)
+                if(event.key=='a'){
+                    alert("a not allowed")
+                }
+                
+                fn.style.backgroundColor="pink"
+              }
+            
+              
+     </script>
+
+    </div>
+</body>
+</html>

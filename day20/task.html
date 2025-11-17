@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <p id="one">sreevani</p>
+    <button onclick="inside()">click</button><br><br>
+    <button onclick="inside1()">Click</button><br><br>
+    <div class="box" onmouseover="cha1()" 
+     style="width:100px; height:100px; border:2px solid black;">
+    </div><br><br>
+    <div class="box1"
+        onmouseover="colo1()",
+        onmouseout="colo2()"
+        style="width: 100px; height: 100px; border: 2px solid black;">
+
+    </div>
+
+        
+    
+    <script>
+        function inside(){
+            var plan=document.querySelector("#one")
+            plan.innerHTML="sai"
+        }
+        function inside1() {
+        
+        alert("Clicked Successfully!");
+        }
+        function cha1() {
+        var chac = document.querySelector(".box");
+        chac.style.backgroundColor = "green"; 
+    }
+        function colo1() {
+            var chac1 = document.querySelector(".box1");
+            chac1.style.backgroundColor = "red"; 
+        }
+
+        function colo2() {
+            var chac2 = document.querySelector(".box1");
+            chac2.style.backgroundColor = "gray";
+        }
+
+    </script>
+</body>
+</html>
