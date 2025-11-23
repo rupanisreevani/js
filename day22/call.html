@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this ketword</title>
+</head>
+<body>
+    <p id="para"></p>
+    <script>
+        const person={
+            fistname:"sai",
+            lastname:"sreevani",
+            fun_name:function(){
+                console.log(`The fistname is:${this.fistname} and ${this.lastname}`)
+
+            }
+        }
+        const person1={
+            firstname:"nani",
+            lastname:"potti"
+        }
+        // person.fun_name();
+        // person.fun_name(person1);
+
+        // function fun_name1(){
+        //     console.log(this)
+
+        // }
+        // fun_name1()
+
+        const emp1={
+            empid:12,
+            empname:"sai",
+            empsalary:20000,
+            empDetails:function(bonus,gift){
+                console.log("The total salary along with the bonus is:",this.empsalary+bonus,"and the gift they got is:",gift)
+                return `The empid:${this.empid} |empname:${this.empname} | empsalary:${this.empsalary}`
+            }
+        }
+        const emp2={
+            empid:121,
+            empname:"srevani",
+            empsalary:25000,
+
+        }
+        const emp3={
+            empid:56,
+            empname:"nani",
+            empsalary:22000,
+        }
+        console.log(emp1.empDetails(5000,"watch"))
+        // // call()
+        // console.log(emp1.empDetails.call(emp2,5000,"cooker"))
+        // console.log(emp1.empDetails(10000,"beer"))
+        // console.log(emp1.empDetails.call(emp3,500,"maza"))
+        // apply()
+        // console.log(emp1.empDetails.call(emp2,5000,"cooker"))
+        // console.log(emp1.empDetails(10000,"beer"))
+        // console.log(emp1.empDetails.call(emp3,500,"maza"))
+        
+        // bind()
+        var res =emp1.empDetails.bind(emp2,5000,"cooker")
+        // console.log(res())
+        console.log(setTimeout(res,2000))
+
+        // document.getElementById('para').innerHTML=emp1.empDetails()
+        // document.getElementById('para').innerHTML=emp1.empDetails(emp2)
+
+
+    </script>
+</body>
+</html>
