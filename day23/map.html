@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1=[1,2,3,4,5]
+        let num2=num1.map((Number)=>Number*5)
+        console.log(num2)
+        console.lod(num1)
+        // let num2=[8,12,20,30,40,45,50,55]
+        // let  res=num2.filter((Number1)=>Number1>20)
+        // console.log(res)
+
+        var nums=[1,5,3,2,6]
+        var res1=nums.reduce((acc,cur)=>acc+cur,0);
+        console.log(res1)
+
+        setTimeout(()=>{console.log("hello")},2000)
+
+        setInterval(()=>{
+            console.log("hii") },2000)
+
+        let time=setTimeout(()=>{
+            console.log("hello")
+        },3000);
+        clearTimeout(time)
+
+        let count=1;
+        let counter1=setInterval(()=>{
+            console.log("count:",count);
+            count++;
+            if(count>5){
+                clearInterval(counter1)
+            }
+        },1000)
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Part 1 — Tasks on map()
+        // 1
+        let num1=[2,4,6,8]
+        let num2=num1.map((Number)=>Number*10)
+        console.log(num2)
+
+        // 2
+        var names=[
+            {name:"sai",age:23},
+            {name:"sreevani",age:23}
+        ]
+        var res=names.map(person=>person.name);
+        console.log(res)
+        var res1=names.map(person=>person.age)
+        console.log(res1)
+// 3
+        let num=[3,5,7,9]
+        let squ=num.map((Number)=>Number**2)
+        console.log(squ)
+
+        //  Part 2 — Tasks on filter()
+
+        // 4
+        let a=[2,6,3,11,9,15,16]
+        let res =a.filter((Number)=>Number%2===0)
+        console.log(res)
+
+//         Task 5: Students With Marks > 75
+// Given:
+// [
+//   {name: "Arun", marks: 80},
+//   {name: "Ravi", marks: 60},
+//   {name: "Kavi", marks: 90}
+// ]
+
+// Use filter() to return only students with marks > 75.
+
+        let marks=[
+            {name: "Arun", marks: 80},
+            {name: "Ravi", marks: 60},
+            {name: "Kavi", marks: 90}
+
+        ] 
+        let res =marks.filter((Number)=>Number.marks>75)
+        console.log(res)
+
+//         Task 6: Filter Strings with Length > 5
+//          Input array:
+//           ["apple", "cat", "banana", "dog", "elephant"]
+//           Use filter() to return only words whose length is greater than 5.
+        let a=  ["apple", "cat", "banana", "dog", "elephant"]
+        let res=a.filter((str)=>str.length>5)
+        console.log(res)
+
+//         🔹 Part 3 — Tasks on reduce()
+// Task 7: Find Total Price
+// Given:
+// const prices = [150, 200, 350, 100];
+
+// Use reduce() to find the total bill amount.
+        let prices= [150, 200, 350, 100];
+        let res=prices.reduce((acc,cur)=> acc+cur,0)
+        console.log(res)
+// Task 8: Count Total Characters
+// Given an array of strings:
+//  ["js", "react", "node"]
+//  Use reduce() to count total number of characters in all words.
+          
+        let words = ["js", "react", "node"];
+
+        let totalChars = words.reduce((acc, cur) => acc + cur.length, 0);
+
+        console.log(totalChars);
+
+// 🔹 Part 4 — Tasks on Timing Functions
+// Task 9: Display “Hello World” after 3 seconds
+// Use setTimeout() to print "Hello World" after 3 seconds.
+
+    setTimeout(() => console.log("Hello World"), 3000);
+
+// Task 10: Display Numbers 1 to 10 Every Second
+// Use setInterval() to print numbers 1 to 10 (1 number per second).
+//  Stop using clearInterval() when 10 is reached.
+
+      let count=1
+      let time=setInterval(()=>{
+        console.log(count);
+        if (count===10){
+            clearInterval(time);
+
+        }
+        count++;
+      },1000)
+
+// Task 11: Stop a Timer Before It Runs
+// Start a setTimeout() of 5 seconds, but cancel it after 2 seconds using clearTimeout()
+    let timer = setTimeout(() => {
+    console.log("Timer executed!");
+}, 5000);  // 5 seconds
+
+    setTimeout(() => {
+    clearTimeout(timer);
+    console.log("Timer cancelled before execution!");
+}, 2000);  // cancel after 2 seconds
+
+// Task 12: Live Clock
+// Create a digital clock that prints the current time every 1 second using setInterval().
+//  Add a button to stop the clock using clearInterval().
+
+
+    let time1=setTimeout(()=>{
+        console.log("hello")
+    },5000)
+
+    setTimeout(() => {
+    clearTimeout(timer);
+    console.log("hello come");
+}, 2000);
+
+
+
+
+
+
+
+
+             
+
+
+
+
+    </script>
+</body>
+</html>
