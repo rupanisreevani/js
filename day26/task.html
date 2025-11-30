@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function selectFood(){
+    return new Promise(resolve=>{
+        setTimeout(()=>{
+            console.log("food selected")
+            resolve();
+        },1000)
+    })
+}
+
+async function prepareFood(){
+    return new Promise(resolve=>{
+        setTimeout(()=>{
+            console.log("food prepared")
+            resolve();
+        },1000)
+    })
+}
+
+async function packfood(){
+    return new Promise(resolve=>{
+        setTimeout(()=>{
+            console.log("food packed")
+            resolve();
+        },1000)
+    })
+}
+async function deliverfood(){
+    return new Promise(resolve=>{
+        setTimeout(()=>{
+            console.log("food delivere")
+            resolve();
+        },1000)
+    })
+}
+async function processOrder(){
+    await selectFood();
+    await prepareFood()
+    await packfood();
+    await deliverfood();
+    console.log("order completed")
+}
+
+processOrder();
+    
+
+    </script>
+</body>
+</html>
