@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Poppins, Arial;
+            background: linear-gradient(135deg, #ff6a88, #ff99ac, #8ec5fc, #e0c3fc);
+            background-size: 300% 300%;
+            animation: bgAnimation 8s infinite alternate;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes bgAnimation {
+            0% { background-position: left top; }
+            50% { background-position: right center; }
+            100% { background-position: left bottom; }
+        }
+
+        form {
+            width: 350px;
+            background: rgba(255, 255, 255, 0.80);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            animation: popup 0.6s ease-out;
+        }
+
+        @keyframes popup {
+            from { transform: scale(0.6); opacity: 0; }
+            to   { transform: scale(1); opacity: 1; }
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #ff0844, #ffb199);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #ff4b2b;
+            box-shadow: 0 0 10px #ff416c;
+        }
+
+        .error_message {
+            color: rgb(255, 0, 0);
+            font-size: 13px;
+            height: 16px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            width: 48%;
+            padding: 12px;
+            border: none;
+            color: white;
+            font-size: 17px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        input[type="reset"] {
+            background: linear-gradient(135deg, #ff0844, #ffb199);
+        }
+
+        input[type="submit"]:hover {
+            box-shadow: 0 8px 20px rgba(59, 88, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        input[type="reset"]:hover {
+            box-shadow: 0 8px 20px rgba(255, 0, 122, 0.5);
+            transform: translateY(-2px);
+        }
+
+        #agree {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<form onsubmit="return formvalidation()">
+    
+
+    <label>Name:</label>
+    <input type="text" id="name"><br>
+    <span id="name-error" class="error_message"></span>
+
+    <label>Password:</label>
+    <input type="password" id="password"><br>
+    <span id="password-error" class="error_message"></span><br>
+
+    <label>Re-enter Password:</label>
+    <input type="password" id="repassword"><br>
+    <span id="repassword-error" class="error_message"></span><br>
+
+    <label>Email:</label>
+    <input type="email" id="email"><br>
+    <span id="email-error" class="error_message"></span><br>
+
+    <label>College:</label>
+    <textarea id="college"></textarea><br>
+    <span id="college-error" class="error_message"></span><br>
+
+    <label>Course:</label>
+    <select id="course">
+        <option value="">== Select Option ==</option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+        <option>Python</option>
+        <option>SQL</option>
+    </select><br>
+    <span id="course-error" class="error_message"></span><br>
+
+    <div>
+        <input type="checkbox" id="agree">
+        <label for="agree">I agree to the terms</label>
+    </div>
+    <span id="checkbox-error" class="error_message"></span><br>
+
+    <div style="display: flex; justify-content: space-between;">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </div>
+</form>
+
+<script>
+function formvalidation() {
+    const name = document.getElementById("name").value;
+    const password = document.getElementById("password").value;
+    const repassword = document.getElementById("repassword").value;
+    const email = document.getElementById("email").value;
+    const college = document.getElementById("college").value;
+    const course = document.getElementById("course").value;
+    const agree = document.getElementById("agree").checked;
+
+    const nameerror = document.getElementById("name-error");
+    const passworderror = document.getElementById("password-error");
+    const repassworderror = document.getElementById("repassword-error");
+    const emailerror = document.getElementById("email-error");
+    const collegeerror = document.getElementById("college-error");
+    const courseerror = document.getElementById("course-error");
+    const checkboxerror = document.getElementById("checkbox-error");
+
+    nameerror.textContent = "";
+    passworderror.textContent = "";
+    repassworderror.textContent = "";
+    emailerror.textContent = "";
+    collegeerror.textContent = "";
+    courseerror.textContent = "";
+    checkboxerror.textContent = "";
+
+    let valid = true;
+
+    if (name === "") {
+        nameerror.textContent = "Enter your name";
+        valid = false;
+    }
+    if (password.length < 6) {
+        passworderror.textContent = "Min 6 characters";
+        valid = false;
+    }
+    if (repassword !== password) {
+        repassworderror.textContent = "Password does not match";
+        valid = false;
+    }
+    if (email === "") {
+        emailerror.textContent = "Enter a valid email";
+        valid = false;
+    }
+    if (college === "") {
+        collegeerror.textContent = "Enter college name";
+        valid = false;
+    }
+    if (course === "") {
+        courseerror.textContent = "Select a course";
+        valid = false;
+    }
+    if (!agree) {
+        checkboxerror.textContent = "Please accept terms";
+        valid = false;
+    }
+
+    return valid;
+}
+</script>
+
+</body>
+</html>

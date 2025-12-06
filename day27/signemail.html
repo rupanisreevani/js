@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colorful Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffe6f0, #e3f2fd, #e8f5e9);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 360px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 20px rgba(0,0,0,0.20);
+            animation: pop 0.8s ease;
+        }
+
+        @keyframes pop {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff6fa5;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #6d6d6d;
+        }
+
+        input {
+            width: 95%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #fce4ec, #e1f5fe);
+            font-size: 15px;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        input:focus {
+            background: linear-gradient(45deg, #f8bbd0, #b3e5fc);
+            box-shadow: 0px 0px 5px #ff99c8;
+        }
+
+        .password-box {
+            position: relative;
+        }
+
+        .show-btn {
+            position: absolute;
+            right: 12px;
+            top: 14px;
+            background: none;
+            border: none;
+            color: #ff4081;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #ff80ab, #ffcc80);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.04);
+            background: linear-gradient(45deg, #ff4d88, #ffb74d);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Sign In</h2>
+
+    <form name="myform" onsubmit="return formvalidation()">
+
+        <!-- Name -->
+        <label>Name:</label>
+        <input type="text" name="fullname" placeholder="Enter your full name">
+
+        <!-- Email -->
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="Enter your email">
+
+        <!-- Password -->
+        <label>Password:</label>
+        <div class="password-box">
+            <input type="password" name="password" id="password" placeholder="Enter password">
+            <button type="button" class="show-btn" onclick="togglePassword()">SHOW</button>
+        </div>
+
+        <!-- Confirm Password -->
+        <label>Re-enter Password:</label>
+        <div class="password-box">
+            <input type="password" name="confirm" id="confirm" placeholder="Re-enter password">
+            <button type="button" class="show-btn" onclick="toggleConfirm()">SHOW</button>
+        </div>
+
+        <input type="submit" value="sign In" class="btn">
+
+    </form>
+</div>
+
+<script>
+function formvalidation() {
+    var name = document.myform.fullname.value;
+    var email = document.myform.email.value;
+    var password = document.myform.password.value;
+    var confirm = document.myform.confirm.value;
+
+    if (name == "") {
+        alert("Name is required");
+        return false;
+    }
+    if (email == "") {
+        alert("Email is required");
+        return false;
+    }
+    if (!email.includes("@")) {
+        alert("Enter a valid email");
+        return false;
+    }
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+    if (password != confirm) {
+        alert("Passwords do not match");
+        return false;
+    }
+
+    alert("Sign In Successful!");
+    return true;
+}
+
+function togglePassword() {
+    var pass = document.getElementById("password");
+    var btn = document.querySelectorAll(".show-btn")[0];
+
+    if (pass.type === "password") {
+        pass.type = "text";
+        btn.textContent = "HIDE";
+    } else {
+        pass.type = "password";
+        btn.textContent = "SHOW";
+    }
+}
+
+function toggleConfirm() {
+    var pass = document.getElementById("confirm");
+    var btn = document.querySelectorAll(".show-btn")[1];
+
+    if (pass.type === "password") {
+        pass.type = "text";
+        btn.textContent = "HIDE";
+    } else {
+        pass.type = "password";
+        btn.textContent = "SHOW";
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PRODUCT CONTAINER (Missing earlier) -->
+    <div id="products"></div>
+
+    <script>
+        async function fetchData() {
+            let response = await fetch('https://fakestoreapi.com/products');
+            let res = await response.json();
+
+            let prod = document.getElementById('products');
+            prod.innerHTML = "";
+
+            res.forEach((product) => {
+                prod.innerHTML += `
+                    <div style="
+                        width: 260px;
+                        border: 2px solid #4a4a4a;
+                        padding: 15px;
+                        border-radius: 12px;
+                        text-align:center;
+                        background:white;
+                        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+                    ">
+                        <img src="${product.image}" 
+                            style="width:120px; height:120px; object-fit:contain; border:1px solid #ddd; padding:5px; border-radius:10px;">
+                        
+                        <h3 style="font-size:18px; margin-top:10px;">${product.title}</h3>
+                        <p style="font-weight:bold; font-size:20px; color:green;">₹ ${product.price}</p>
+                        <p style="color:#555;"><b>Category:</b> ${product.category}</p>
+                        <p style="font-size:14px; text-align:justify;">${product.description}</p>
+                    </div>
+                `;
+            });
+        }
+
+        fetchData();
+    </script>
+
+</body>
+</html>

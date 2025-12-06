@@ -1,0 +1,275 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Colorful Sign In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Beautiful gradient */
+            background: linear-gradient(135deg, #FF9A8B, #FF6A88, #FF99AC);
+            height: 100vh;
+        }
+
+        .container {
+            width: 320px;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.25);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d63384;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            margin: 12px 0;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            background: #ffe6ef;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            background: #ffd0e1;
+            box-shadow: 0 0 5px #ff4d88;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #ff5f6d, #ffc371);
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #ff3c54, #ffb347);
+            transform: scale(1.03);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Sign In</h2>
+
+    <form name="myform" onsubmit="return formvalidation()">
+        <label>Username:</label>
+        <input type="text" name="username">
+
+        <label>Password:</label>
+        <input type="password" name="password">
+
+        <input type="submit" value="Sign In" class="btn">
+    </form>
+</div>
+
+<script>
+function formvalidation() {
+    var username = document.myform.username.value;
+    var password = document.myform.password.value;
+
+    if (username == "" || username == null) {
+        alert("Username is required");
+        return false;
+    }
+
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    alert("Sign In Successful!");
+    return true;
+}
+</script>
+
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colorful Email Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+
+            /* Light colorful gradient */
+            background: linear-gradient(135deg, #ffe6f0, #e3f2fd, #e8f5e9);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 340px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 20px rgba(0,0,0,0.20);
+            animation: pop 0.8s ease;
+        }
+
+        @keyframes pop {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff6fa5;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #6d6d6d;
+        }
+
+        input {
+            width: 95%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #fce4ec, #e1f5fe);
+            font-size: 15px;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        input:focus {
+            background: linear-gradient(45deg, #f8bbd0, #b3e5fc);
+            box-shadow: 0px 0px 5px #ff99c8;
+        }
+
+        /* Password box */
+        .password-box {
+            position: relative;
+        }
+
+        .show-btn {
+            position: absolute;
+            right: 12px;
+            top: 14px;
+            background: none;
+            border: none;
+            color: #ff4081;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #ff80ab, #ffcc80);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.04);
+            background: linear-gradient(45deg, #ff4d88, #ffb74d);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Sign In</h2>
+
+    <form name="myform" onsubmit="return formvalidation()">
+
+        <!-- Email Field -->
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="Enter your email">
+
+        <!-- Password Field -->
+        <label>Password:</label>
+        <div class="password-box">
+            <input type="password" name="password" id="password" placeholder="Enter password">
+            <button type="button" class="show-btn" onclick="togglePassword()">SHOW</button>
+        </div>
+
+        <input type="submit" value="Sign In" class="btn">
+
+    </form>
+</div>
+
+<script>
+function formvalidation() {
+    var email = document.myform.email.value;
+    var password = document.myform.password.value;
+
+    if (email == "") {
+        alert("Email is required");
+        return false;
+    }
+
+    if (!email.includes("@")) {
+        alert("Enter a valid email");
+        return false;
+    }
+
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    alert("Sign In Successful!");
+    return true;
+}
+
+function togglePassword() {
+    var pass = document.getElementById("password");
+    var btn = document.querySelector(".show-btn");
+
+    if (pass.type === "password") {
+        pass.type = "text";
+        btn.textContent = "HIDE";
+    } else {
+        pass.type = "password";
+        btn.textContent = "SHOW";
+    }
+}
+</script>
+
+</body>
+</html>

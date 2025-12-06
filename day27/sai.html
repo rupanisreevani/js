@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Poppins, Arial;
+            background: linear-gradient(135deg, #ff6a88, #ff99ac, #8ec5fc, #e0c3fc);
+            background-size: 300% 300%;
+            animation: bgMove 8s infinite alternate;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes bgMove {
+            0% { background-position: left top; }
+            50% { background-position: right center; }
+            100% { background-position: left bottom; }
+        }
+
+        form {
+            width: 350px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff0844, #ffb199);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #ff4b2b;
+            box-shadow: 0 0 10px #ff416c;
+        }
+
+        .error_message {
+            color: red;
+            font-size: 13px;
+            height: 15px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            width: 48%;
+            padding: 12px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        input[type="reset"] {
+            background: linear-gradient(135deg, #ff0844, #ffb199);
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        #agree {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<form onsubmit="return formvalidation()">
+
+    <h2>Sign Up</h2><br>
+
+    <label>Name:</label><br>
+    <input type="text" id="name"><br>
+    <span id="name-error" class="error_message"></span><br>
+
+    <label>Password:</label><br>
+    <input type="password" id="password"><br>
+    <span id="password-error" class="error_message"></span><br>
+
+    <label>Re-enter Password:</label><br>
+    <input type="password" id="repassword"><br>
+    <span id="repassword-error" class="error_message"></span><br>
+
+    <label>Email:</label><br>
+    <input type="email" id="email"><br>
+    <span id="email-error" class="error_message"></span><br>
+
+    <label>College:</label><br>
+    <textarea id="college"></textarea><br>
+    <span id="college-error" class="error_message"></span><br>
+
+    <label>Course:</label><br>
+    <select id="course">
+        <option value="">== Select Option ==</option>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+        <option>Python</option>
+        <option>SQL</option>
+    </select><br>
+    <span id="course-error" class="error_message"></span><br>
+
+    <input type="checkbox" id="agree">
+    <label for="agree">I agree</label><br>
+    <span id="checkbox-error" class="error_message"></span>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+
+</form>
+
+<script>
+function formvalidation() {
+    const name = document.getElementById("name").value;
+    const password = document.getElementById("password").value;
+    const repassword = document.getElementById("repassword").value;
+    const email = document.getElementById("email").value;
+    const college = document.getElementById("college").value;
+    const course = document.getElementById("course").value;
+    const agree = document.getElementById("agree").checked;
+
+    const nameerror = document.getElementById("name-error");
+    const passworderror = document.getElementById("password-error");
+    const repassworderror = document.getElementById("repassword-error");
+    const emailerror = document.getElementById("email-error");
+    const collegeerror = document.getElementById("college-error");
+    const courseerror = document.getElementById("course-error");
+    const checkboxerror = document.getElementById("checkbox-error");
+
+    nameerror.textContent = "";
+    passworderror.textContent = "";
+    repassworderror.textContent = "";
+    emailerror.textContent = "";
+    collegeerror.textContent = "";
+    courseerror.textContent = "";
+    checkboxerror.textContent = "";
+
+    let valid = true;
+
+    if (name === "") {
+        nameerror.textContent = "Please enter name";
+        valid = false;
+    }
+
+    if (password.length < 6) {
+        passworderror.textContent = "Min 6 characters";
+        valid = false;
+    }
+
+    if (repassword !== password) {
+        repassworderror.textContent = "Password does not match";
+        valid = false;
+    }
+
+    if (email === "") {
+        emailerror.textContent = "Enter valid email";
+        valid = false;
+    }
+
+    if (college === "") {
+        collegeerror.textContent = "Enter college";
+        valid = false;
+    }
+
+    if (course === "") {
+        courseerror.textContent = "Select course";
+        valid = false;
+    }
+
+    if (!agree) {
+        checkboxerror.textContent = "Accept terms";
+        valid = false;
+    }
+
+    return valid;
+}
+</script>
+
+</body>
+</html>

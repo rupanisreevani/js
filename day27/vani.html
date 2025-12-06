@@ -1,0 +1,88 @@
+<form onsubmit=" return formvalidation()">
+    <label for="name">name:</label>
+    <input type="text" id="name"><br>
+    <span id="name-error" class="error_message"></span><br>
+
+    <label for="password">password:</label>
+    <input type="password" id="password"><br>
+    <span id="password-error" class="error_message"></span><br>
+
+    <label for="Email">Email:</label>
+    <input type="email" id="email"><br>
+    <span id="email-error" class="error_message"></span><br>
+
+    <label for="college">college:</label>
+    <textarea id="college"></textarea><br>
+    <span id="college-error" class="error_message"></span><br>
+
+    <label for="course">course:</label>
+    <select id="course">
+        <option value="">==select option==</option>
+        <option>js</option>
+        <option>python</option>
+        <option>sql</option>
+        <option>HTML</option>
+    </select><br>
+    <span id="course-error" class="error_message"></span><br>
+
+    <div>
+        <input type="checkbox" id="agree">
+        <label for="agree">I agree</label>
+    </div>
+    <span id="checkbox-error" class="error_message"></span><br>
+
+    <input type="submit" value="submit"><br><br>
+    <input type="reset" value="Reset">
+</form>
+
+<script>
+    function formvalidation() {
+        const name = document.getElementById('name').value;
+        const password = document.getElementById('password').value;
+        const email = document.getElementById('email').value;
+        const course = document.getElementById('course').value;
+        const agree = document.getElementById('agree').checked;
+
+        const nameerror = document.getElementById('name-error');
+        const passworderror = document.getElementById('password-error');
+        const emailerror = document.getElementById('email-error');
+        const courseerror = document.getElementById('course-error');
+        const checkboxerror = document.getElementById('checkbox-error');
+
+        
+        nameerror.textContent = "";
+        passworderror.textContent = "";
+        emailerror.textContent = "";
+        courseerror.textContent = "";
+        checkboxerror.textContent = "";
+
+        let isValid = true;
+
+        if (name === "") {
+            nameerror.textContent = "username not filled";
+            isValid = false;
+        }
+        if (password.length < 6) {
+            passworderror.textContent = "password should be more than 6 characters";
+            isValid = false;
+        }
+
+        
+        if (email === "") {
+            emailerror.textContent = "email is not valid";
+            isValid = false;
+        }
+
+        if (course === "") {
+            courseerror.textContent = "select the course";
+            isValid = false;
+        }
+
+        if (!agree) {
+            checkboxerror.textContent = "please accept the terms and conditions";
+            isValid = false;
+        }
+
+        return isValid; 
+    }
+</script>
