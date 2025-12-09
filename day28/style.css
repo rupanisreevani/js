@@ -1,0 +1,102 @@
+body {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    font-family: Poppins, Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.title {
+    background: #6a11cb;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    width: 60%;
+    margin: 20px auto;
+    box-shadow: 0 0 15px #3e1a78;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px #6a11cb;
+}
+
+form input {
+    width: 90%;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 0 8px #6a11cb;
+    font-size: 16px;
+}
+
+.btn-create {
+    background: linear-gradient(45deg, #ff512f, #dd2476);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    margin-top: 10px;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #dd2476;
+    transition: 0.3s;
+}
+
+.btn-create:hover {
+    transform: scale(1.1);
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: #6a11cb;
+    color: white;
+    padding: 10px;
+    font-size: 17px;
+}
+
+td {
+    background: #f3e8ff;
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 2px solid white;
+}
+
+.btn-edit {
+    background: #ffb300;
+    color: white;
+    padding: 6px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    background: #d32f2f;
+    color: white;
+    padding: 6px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
