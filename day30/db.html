@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // get
+        // fetch("http://localhost:3000/students")
+        // .then(res=>res.json())
+        // .then(data=>console.log(data))
+        // .catch(err=>console.log(err))
+        // post
+        // fetch("http://localhost:3000/students",{
+        //     method:"POST",
+        //     headers:{"Content-Type":"Aplication/json"},
+        //     body:JSON.stringify({
+        //         id:4,
+        //         name:"nani",
+        //         email:"nani@gmail.com",
+        //         age:"22"
+        //     })
+        // })
+        // .then(res=>res.json())
+        // .then(data=>console.log(data))
+        // .catch(err=>console.log(err))
+        // put
+//             fetch("http://localhost:3000/students/3", {
+//                 method: "PUT",
+//                 headers: {
+//                     "Content-Type": "application/json"
+//                 },
+//                 body: JSON.stringify({
+//                 id: "4",
+//                 name: "updated name",
+//                 email: "updated@gmail.com",
+//                 age: "25",
+//                 height: "6ft"
+//     })
+// })
+// .then(res => res.json())
+// .then(data => console.log(data))
+// .catch(err => console.log(err));
+
+// patch
+
+//         fetch("http://localhost:3000/students/3", {
+//             method: "PATCH",
+//             headers: { "Content-Type": "application/json" },
+//             body: JSON.stringify({
+//                 name: "sreesai"
+//     })
+// })
+// .then(res => res.json())
+// .then(data => console.log(data))
+// .catch(err => console.log(err));
+
+
+// delete 
+
+fetch("http://localhost:3000/students/3", {
+    method: "DELETE"
+})
+.then(() => console.log("Deleted"))
+.catch(err => console.log(err));
+
+
+
+
+    </script>
+</body>
+</html>
